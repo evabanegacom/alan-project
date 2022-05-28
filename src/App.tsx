@@ -23,12 +23,14 @@ function App() {
     setInfo(data[random]);
   
     setQuery("");
+    document.querySelector('form')?.reset();
   };
 
   return (
     <div className="App">
       <Paper elevation={10} className="paper">
-        <TextField
+        <form>
+        <TextField className='inputField'
           type="text"
           label="Query"
           required
@@ -37,7 +39,6 @@ function App() {
           multiline
           onChange={onChange}
         />
-      </Paper>
       <Button
         type="submit"
         color="primary"
@@ -46,8 +47,9 @@ function App() {
         onClick={onClick}
         style={inputMargin}
         disabled={isValid}
-      >Submit query</Button>
-
+        >Submit query</Button>
+</form>
+        </Paper>
       <Typography style={inputMargin}>
         This is a table that randomly shows the year and club each footballer who won the FIFA best player award in the world.
       </Typography>

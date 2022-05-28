@@ -20,8 +20,9 @@ function App() {
 
   const onClick = () => {
     const random = Math.floor(Math.random() * data.length);
-    console.log(random, data[random]);
     setInfo(data[random]);
+  
+    setQuery("");
   };
 
   return (
